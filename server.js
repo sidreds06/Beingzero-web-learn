@@ -1,13 +1,15 @@
-{
-  "name": "beingzero-web-learn",
-  "version": "1.0.0",
-  "description": "Web Learning Project",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "express": "^4.17.1"
-  }
-}
+const express = require('express');
+
+const app = express();
+
+app.get("/", function(req, res){
+    res.send("Welcome to My Basic Site");
+})
+
+// Heroku will automatically set an environment variable called PORT
+const PORT = process.env.PORT || 3000;
+
+// Start the server
+app.listen(PORT, function(){
+    console.log("Server Starting running on http://localhost:"+PORT);
+})
