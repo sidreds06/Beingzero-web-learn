@@ -1,25 +1,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
-body{
-    background-color: black;
-}
 
 h1
 {
-    color: rgb(255, 255, 255);
-    font-family: 'Montserrat', sans-serif;
+    color:black;
+    font-family: Verdana;
     font-size: 30px;
-    font-weight: 900;
+    font-weight: 500;
     position: relative;
     text-align: center;
 }
 h2
 {
-    color: rgb(255, 255, 255);
-    font-family: 'Montserrat', sans-serif;
+    color:black;
+    font-family: Garamond;
     font-size: 30px;
-    font-weight: 900;
+    font-weight: 500;
+}
+#oneh2{
+    bottom: -30px;
+}
+#div1
+{
     position: relative;
     text-align: left;
-    left: 20px;
+    
 }
+#div2{
+    position: relative;
+    text-align: right;
+    top: -100px;
+}
+.inlin{
+    display: inline-block;
+    width: 355px;
+    height: 300px;
+
+}
+
+body {
+    width: 230mm;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 12pt;
+    background:grey; 
+  }
+  * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+  .main-page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 10mm auto;
+    background: white;
+    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+  }
+  .sub-page {
+    padding: 1cm;
+    height: 297mm;
+  }
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  @media print {
+    html, body {
+      width: 210mm;
+      height: 297mm;        
+    }
+    .main-page {
+      margin: 0;
+      border: initial;
+      border-radius: initial;
+      width: initial;
+      min-height: initial;
+      box-shadow: initial;
+      background: initial;
+      page-break-after: always;
+    }
+  }
