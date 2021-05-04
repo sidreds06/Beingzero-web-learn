@@ -1,83 +1,147 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 
-
-h1
+body{
+  position: relative;
+  background-color: rgb(218, 218, 218);
+  height: fit-content;
+}
+#one
 {
-    color:black;
-    font-family: Verdana;
-    font-size: 30px;
-    font-weight: 500;
-    position: relative;
-    text-align: center;
+  position: relative;
+  /*top: -149px;*/
+  bottom: 150px;
+  display: inline-block;
+  background-color: white;
+  width: 30%;
+  height: 1200px;
+ /* padding:10px 10px;
+ margin-top: 20px;*/
+  margin-left: 65px;
+  outline: none;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+;
 }
-h2
+
+#two
 {
-    color:black;
-    font-family: Garamond;
-    font-size: 30px;
-    font-weight: 500;
+  position: relative;
+  display: inline-block;
+  background-color: white;
+  width: 62%;
+  height: 600px;
+ /* padding:10px 10px;*/
+  margin-top: 20px;
+  margin-left: 13px;
+  outline: none;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+;
 }
-#oneh2{
-    bottom: -30px;
-}
-#div1
+
+#three
 {
-    position: relative;
-    text-align: left;
-    
+  position: relative;
+  display: inline-block;
+  background-color: white;
+  width: 62%;
+  height: 600px;
+ /* padding:10px 10px;
+ top: -660px;*/
+ bottom: 650px;
+  margin-top: -70px;
+  margin-left: 532px;
+  outline: none;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+;
 }
-#div2{
-    position: relative;
-    text-align: right;
-    top: -100px;
+
+#pic{
+  position: relative;
+  outline: none;
+  border: none;
+  width: 100%;
+
+  
 }
-.inlin{
-    display: inline-block;
-    width: 355px;
-    height: 300px;
+
+#oneh1{
+  font-family: 'Roboto', sans-serif;
+  color:white;
+  position: absolute;
+  top:390px;
+  left: 10px;
 
 }
 
-body {
-    width: 230mm;
-    height: 100%;
-    margin: 0 auto;
-    padding: 0;
-    font-size: 12pt;
-    background:grey; 
-  }
-  * {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-  }
-  .main-page {
-    width: 210mm;
-    min-height: 297mm;
-    margin: 10mm auto;
-    background: white;
-    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
-  }
-  .sub-page {
-    padding: 1cm;
-    height: 297mm;
-  }
-  @page {
-    size: A4;
-    margin: 0;
-  }
-  @media print {
-    html, body {
-      width: 210mm;
-      height: 297mm;        
-    }
-    .main-page {
-      margin: 0;
-      border: initial;
-      border-radius: initial;
-      width: initial;
-      min-height: initial;
-      box-shadow: initial;
-      background: initial;
-      page-break-after: always;
-    }
-  }
+#twoh1{
+  position: absolute;
+  font-size: 30px;
+  margin-top: 25px;
+}
+
+#pj_icon{
+  font-size:36px;
+  margin-top: 20px;
+}
+
+footer{
+  background-color: black;
+  width: 100%;
+  height: 150px;
+}
+
+#info{
+  position: absolute;
+  top: 460px;
+}
+
+#skills{
+  position: absolute;
+  top: 630px;
+}
+
+#projects{
+  position: absolute;
+}
+
+.material-icons{
+  color:rgb(0, 119, 99);
+  display: inline;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.txt
+{
+  position: relative;
+  top: -3px;
+  display: inline;
+  margin-left: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: large;
+  color: gray;
+}
+#hr1{
+  position:absolute;
+  border: 0.1px solid rgb(207, 207, 207);
+  top:615px;
+  width: 90%;
+  left: 20px;
+
+}
