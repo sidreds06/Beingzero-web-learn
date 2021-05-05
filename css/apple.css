@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+body{
+    background-color: black;
+}
+#one{
+    background-color: rgb(17, 17, 17);
+    width: 100%;
+    height: 45px;
+}
+#logo{
+    position: relative;
+    width: 15px;
+    margin-top: 13px;
+    margin-left: 270px;
+}
+
+.text1{
+    font-family: Helvetica;
+    font-size: 14px;
+    font-weight: lighter;
+    position: relative;
+    text-decoration: none;
+    color: rgb(161, 161, 161);
+    margin-left: 70px;
+    bottom: 3px;
+}
+
+#two_one{
+    position: relative;
+    margin-left: 950px;
+}
+
+.text2
+{
+    font-family: Helvetica;
+    font-size: 12px;
+    font-weight: lighter;
+    position: relative;
+    text-decoration: none;
+    color: rgb(161, 161, 161);
+    margin-left: 70px;
+    bottom: 3px;
+}
+#searchl{
+    font-size: 25px;
+    font-weight: lighter;
+    position: relative;
+    text-decoration: none;
+    color: rgb(161, 161, 161);
+    margin-left: 70px;
+    top: 4px;
+    bottom: 3px;
+}
+#bag{
+    font-size: 25px;
+    font-weight: lighter;
+    position: relative;
+    text-decoration: none;
+    color: rgb(161, 161, 161);
+    margin-left: 70px;
+    top: 4px;
+    bottom: 3px;
+}
+
+#two{
+    background-color: black;
+    width: 100%;
+    height: 50px;
+}
+h2{
+    position: relative;
+    font-size: 20px;
+    font-family: Helvetica;
+    margin-left: 270px;
+    top: 15px;
+    color: white;
+}
+
+#ipad{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+    width:900px;
+}
