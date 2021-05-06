@@ -6,7 +6,7 @@ body{
     margin: auto;
     margin-top: 150px;
     width: 27%;
-    height: 700px;
+    height: 600px;
     background-color: rgb(219, 219, 219);
     border-radius: 75px;
     text-align: center;
@@ -16,11 +16,11 @@ body{
 #two{
     font-weight: bold;
     position: relative;
-    top: 70px;
+    top: 50px;
 }
 #three{
     position: relative;
-    top: 100px;
+    top: 80px;
 
 }
 #uname, #psd, #name, #emailad{
@@ -41,5 +41,5 @@ body{
 }
 #button2{
    position: relative;
-   left: 195px;
+   left: 100px;
 }

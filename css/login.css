@@ -6,7 +6,7 @@ body{
     margin: auto;
     margin-top: 150px;
     width: 25%;
-    height: 600px;
+    height: 500px;
     background-color: rgb(219, 219, 219);
     border-radius: 75px;
     text-align: center;
@@ -16,11 +16,11 @@ body{
 #two{
     font-weight: bold;
     position: relative;
-    top: 100px;
+    top: 80px;
 }
 #three{
     position: relative;
-    top: 120px;
+    top: 100px;
 
 }
 #uname, #psd{
@@ -41,5 +41,5 @@ body{
 }
 #button2{
    position: relative;
-   left: 175px;
+   left: 100px;
 }
