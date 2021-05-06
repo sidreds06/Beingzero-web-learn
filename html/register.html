@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../css/register.css">
+    <meta name="google-signin-client_id" content="334239240404-d72r541usti34e02crsh5qk9fproasac.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body>
+    <div id="one">
+        <h1>Register</h1>
+        <form>
+            <div id="two">
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="uname">Username</label><br>
+                <input type="text" id="uname" name="uname"><br>
+                <label for="emailad">Email</label><br>
+                <input type="text" id="emailad" name="emailad"><br>
+                <label for="psd">Password</label><br>
+                <input type="password" id="psd" name="psd"><br>
+            </div>
+            <div id="three">
+                <input id="button" type="submit" value="Register">
+                <p>Or</p>
+                <div id="button2" class="g-signin2" data-onsuccess="onSignIn"></div>
+            </div>
+
+
+
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+body{
+    background-color: rgb(37, 37, 37);
+}
+
+#one{
+    margin: auto;
+    margin-top: 150px;
+    width: 27%;
+    height: 700px;
+    background-color: rgb(219, 219, 219);
+    border-radius: 75px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 5px;
+}
+#two{
+    font-weight: bold;
+    position: relative;
+    top: 70px;
+}
+#three{
+    position: relative;
+    top: 100px;
+
+}
+#uname, #psd, #name, #emailad{
+    height: 30px;
+    width: 50%;
+    border-radius: 5px;
+    outline: none;
+    border: 0;
+    margin-bottom: 30px;
+}
+#button{
+    height: 40px;
+    width: 30%;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+#button2{
+   position: relative;
+   left: 195px;
+}
