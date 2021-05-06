@@ -16,11 +16,11 @@ body{
 #two{
     font-weight: bold;
     position: relative;
-    top: 40px;
+    top: 35px;
 }
 #three{
     position: relative;
-    top: 65px;
+    top: 55px;
 
 }
 #uname, #psd, #name, #emailad{
@@ -41,5 +41,5 @@ body{
 }
 #button2{
    position: relative;
-   left: 130px;
+   left: 140px;
 }
