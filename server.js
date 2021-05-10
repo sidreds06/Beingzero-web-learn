@@ -32,6 +32,9 @@ app.get('/register', function(req, res){
 app.get('/google-charts', function(req, res){
     res.sendFile('html/gcharts.html', {root: __dirname}); 
 })  
+app.get('/cf-api', function(req, res){
+    res.sendFile('html/cfapi.html', {root: __dirname}); 
+})  
 // Heroku will automatically set an environment variable called PORT
 const PORT = process.env.PORT || 3000;
 

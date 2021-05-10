@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CF Api</title>
+    <link rel="stylesheet" href="../css/gcharts.css">
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+        <label for="user">Username:</label>
+        <input type="text" id="user" name="user">
+        <button onclick="myFunction()">Submit</button>
+        <div id="chart_div"></div>
+        <script>// var url = 'https://codeforces.com/api/user.status?handle=sidreds06'
+            var wa=0;
+            var tle=0;
+            var ac=0;
+            async function myFunction(){
+             var user = document.getElementById('user').value
+             console.log(user)
+             var url = 'https://codeforces.com/api/user.status?handle='+user;
+             var response= await fetch(url);
+             var data= await response.json()
+             console.log(data)
+            console.log(data["result"][0]["verdict"])
+            //var wa=0;
+           // var tle=0;
+           // var ac=0;
+            for(var i=0;i<data.result.length;++i){
+             //console.log(data.result[i].verdict)
+                     if(data.result[i].verdict==="WRONG_ANSWER"){
+                     wa++
+                     }
+                     else if(data["result"][i]["verdict"]==="TIME_LIMIT_EXCEEDED"){
+                     tle++
+                     }
+                     else if(data["result"][i]["verdict"]==="OK"){
+                     ac++
+                     }
+                 a=wa
+                 b=tle
+                 c=ac
+                 } 
+                 console.log(wa)
+                console.log(tle)
+                console.log(ac)
+                drawChart()
+             }</script>
+    <script type="text/javascript">
+       
+         // Load the Visualization API and the corechart package.
+         google.charts.load('current', {'packages':['corechart']});
+  
+  // Set a callback to run when the Google Visualization API is loaded.
+  var a=1
+  var b=2
+  var c=3
+  google.charts.setOnLoadCallback(drawChart);
+
+  // Callback that creates and populates a data table,
+  // instantiates the pie chart, passes in the data and
+  // draws it.
+  function drawChart() {
+    // Create the data table.
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'verdict');
+    data.addColumn('number', 'number');
+    data.addRows([
+      ['WA', a],
+      ['TLE', b],
+      ['AC', c]
+    ]);
+
+    // Set chart options
+    var options = {'title':'Verdict',
+                   'width':700,
+                   'height':500};
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+        }
+    </script>
+</body>
+</html>
