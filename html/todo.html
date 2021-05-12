@@ -25,7 +25,7 @@
     function disp(){
         document.getElementById("show").innerHTML=""
         for(var i=0;i<a.length;++i){
-            document.getElementById("show").innerHTML+="<div id='box'>"+a[i]+ "<div id='btns'><span><botton class='btn' onclick='done("+i+")'>Done</button></span>"+" "+"<span><botton class='btn' onclick='del("+i+")'>Delete</button></span></div> </div>"
+            document.getElementById("show").innerHTML+="<div id='box'>"+a[i]+ "<div id='btns'><span><button class='btn' onclick='done("+i+")'>Done</button></span>"+" "+"<span><button class='btn' onclick='del("+i+")'>Delete</button></span></div> </div>"
                
         }
         
@@ -34,6 +34,7 @@
         a.push(document.getElementById("data").value)    
         localStorage.setItem("list",JSON.stringify(a))
         disp()
+        console.log(a)
         console.log(localStorage)
     }
     function del(i){
