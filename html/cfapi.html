@@ -27,12 +27,8 @@
              var response= await fetch(url);
              var data= await response.json()
              console.log(data)
-            console.log(data["result"][0]["verdict"])
-            //var wa=0;
-           // var tle=0;
-           // var ac=0;
+             if(data.status==="OK")
             for(var i=0;i<data.result.length;++i){
-             //console.log(data.result[i].verdict)
                      if(data.result[i].verdict==="WRONG_ANSWER"){
                      wa++
                      }
@@ -57,9 +53,9 @@
          google.charts.load('current', {'packages':['corechart']});
   
   // Set a callback to run when the Google Visualization API is loaded.
-  var a=1
-  var b=2
-  var c=3
+  var a=0
+  var b=0
+  var c=0
   google.charts.setOnLoadCallback(drawChart);
 
   // Callback that creates and populates a data table,

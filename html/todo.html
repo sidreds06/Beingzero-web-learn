@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="../css/todo.css">
+</head>
+<body>
+    <div id='oen'>
+        <input type="text" id="data" name="data" placeholder="Task...">
+        <button class="btn" onclick="add()">Add</button>
+    </div>
+    <div id="show"></div>
+
+<script>
+    var a=[]
+    window.onload=function(){
+        if(JSON.parse(localStorage.getItem("list")) != null){
+            a=JSON.parse(localStorage.getItem("list"))
+            disp()
+        }
+    }
+    function disp(){
+        document.getElementById("show").innerHTML=""
+        for(var i=0;i<a.length;++i){
+            document.getElementById("show").innerHTML+="<div id='box'>"+a[i]+ "<span><botton class='btn' onclick='done("+i+")'>Done</button></span>"+" "+"<span><botton class='btn' onclick='del("+i+")'>Delete</button></span> </div>"
+               
+        }
+        
+    }
+    function add(){
+        a.push(document.getElementById("data").value)    
+        localStorage.setItem("list",JSON.stringify(a))
+        disp()
+        console.log(localStorage)
+    }
+    function del(i){
+      a.splice(i,1)
+      localStorage.setItem("list",JSON.stringify(a))
+      disp()
+    }
+    function done(i){
+          a[i]="<s>"+a[i]+"</s>"
+          localStorage.setItem("list",JSON.stringify(a))
+          disp()
+    }
+   
+
+</script>
+    
+</body>
+</html>

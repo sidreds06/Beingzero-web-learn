@@ -19,6 +19,7 @@
   
         // Set a callback to run when the Google Visualization API is loaded.
         google.charts.setOnLoadCallback(drawChart);
+        google.charts.setOnLoadCallback(drawChart1);
   
         // Callback that creates and populates a data table,
         // instantiates the pie chart, passes in the data and
@@ -47,9 +48,35 @@
           var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
           chart.draw(data, options);
         }
+
+        function drawChart1() {
+  
+  // Create the data table.
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Platform');
+  data.addColumn('number', 'Solves');
+  data.addRows([
+    ['LeetCode', 4],
+    ['CodeChef', 5],
+    ['Codeforces', 7],
+    ['VJudge', 12],
+    ['Mentorpick', 9],
+    ['Interviewbit', 0]
+  ]);
+
+  // Set chart options
+  var options = {'title':'Mentorpick Leaderboard',
+                 'width':700,
+                 'height':500};
+
+  // Instantiate and draw our chart, passing in some options.
+  var chart = new google.visualization.PieChart(document.getElementById('chart_div1'));
+  chart.draw(data, options);
+}
       </script>
     <!--Div that will hold the pie chart-->
     <div id="chart_div"></div>
+    <div id="chart_div1"></div>
   </body>
 </body>
 </html>
