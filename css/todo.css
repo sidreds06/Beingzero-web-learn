@@ -1,3 +1,19 @@
 .btn{
-    margin-left: 10px;
+    margin-left: 20px;
+    background-color: rgb(209, 209, 209);
+    border-radius: 5px;
+}
+#btns{
+    position: absolute;
+    margin-left: 100px;
+    margin-top: -18px;
+
+}
+#box{
+    margin-left: 50px;
+    margin-top: 10px;
+    
+}
+#data{
+   margin-bottom: 20px;
 }
