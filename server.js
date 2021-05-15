@@ -45,3 +45,37 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, function(){
     console.log("Server Starting running on http://localhost:"+PORT);
 })
+app.get('/todocrud', function(req, res){
+    res.sendFile('html/todocrud.html', {root: __dirname}); 
+})  
+
+
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+
+var a={
+    "task":[]
+   };
+
+app.get('/api/todo', function(req, res){
+    res.json(a);
+})
+
+app.post('/api/todo', function(req, res){
+    var newUser= req.body;
+    // console.log(newUser.task)
+    a.task.push(newUser.task)
+    // console.log(a)
+    res.json(a)
+ })
+
+ app.delete('/api/todo/:id', function(req, res){
+    var i=req.params.id
+    a.task.splice(i,1)
+})
+
+app.put('/api/todo/:id', function(req, res){
+    var i=req.params.id
+    a.task[i]="<s>"+a.task[i]+"</s>" 
+})
+
