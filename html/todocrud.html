@@ -17,9 +17,19 @@
     </div>
     <div id="show"></div>
 <script>
-  window.onload=function(){
+
+  window.onload = function () {
+    if (localStorage.getItem("hasCodeRunBefore") === null) {
+      $.ajax({
+        url: '/api/todo/-1',
+        type: 'DELETE',
+        dataType: 'json'
+    });
+        localStorage.setItem("hasCodeRunBefore", true);
+    }
     disp()
-  }
+}
+
   function disp(){
     $.get("/api/todo", function(data, status){
       var d=data

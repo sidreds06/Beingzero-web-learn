@@ -71,6 +71,12 @@ app.post('/api/todo', function(req, res){
 
  app.delete('/api/todo/:id', function(req, res){
     var i=req.params.id
+    if(i==-1){
+        for(var j=0;j<a.task.length;++j){
+            a.task.splice(j,1)
+            console.log(a.task[j])
+        }
+    }
     a.task.splice(i,1)
 })
 
