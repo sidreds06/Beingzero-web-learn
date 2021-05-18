@@ -41,6 +41,10 @@ app.get("/all-tasks", function(req, res){
 
 app.use(express.static(__dirname));
 
+app.get('/crud', function(req, res){
+    res.sendFile('html/crud.html', {root: __dirname}); 
+})   
+
 app.get("/", function(req, res){
     res.sendFile('html/index.html', {root: __dirname});
     //res.send("Welcome to My Basic Site");  
