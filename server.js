@@ -7,7 +7,7 @@ const ap = require('./app')
 const app = express();
 
 var password = process.env.Mongo_atlas_password;
-var connectionString = "mongodb+srv://tenor06:"+password+"@cluster0.mw1u9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+var connectionString = "mongodb+srv://tenor06:Abhishyant22102004@cluster0.mw1u9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
 mongoose.connect(connectionString,{})
 .then((result)=> console.log("Database Connected"))
