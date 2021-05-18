@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Task = require('./js/Task');
-const ap = require('./app')
 
 
 const app = express();
@@ -143,4 +142,55 @@ app.put('/api/todo/:id', function(req, res){
         }
 })
 })
+
+
+//app.js
+
+app.get('/crud/get',async function(req, res){
+    //res.json(a);
+    await Table.find()
+    .then((result)=>{
+     res.send(result)
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+})
+
+app.post('/crud/post',function(req, res){
+    var newt= req.body;
+    console.log(newt)
+    const table= new Table({
+        name: newt.name,
+        Articels: newt.Articels
+    })
+    console.log(table)
+    table.save()
+    //res.json(a)
+ })
+
+ app.delete('/crud/del:id', function(req, res){
+    var i=req.params.id
+    console.log(i)
+        Table.findByIdAndDelete(i,function(err,orb){
+        if(err)
+        console.log("ERROR:"+err)
+        else 
+        console.log("SUCCESS")
+    })
+})
+
+app.put('/crud/put:id', function(req, res){
+    var i=req.params.id
+    Table.findById(i,function(err,obj){
+        if(err)
+        console.log("ERROR:"+err)
+        else {
+            console.log(obj.Articels)
+        var obj={Articels: obj.Articels }
+        //Table.findByIdAndUpdate(i,obj,function(){})
+        }
+})
+})
+
 
