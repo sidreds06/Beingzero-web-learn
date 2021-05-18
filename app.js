@@ -79,3 +79,5 @@ app.put('/crud/put:id', function(req, res){
 })
 })
 
+module.exports = app
+
