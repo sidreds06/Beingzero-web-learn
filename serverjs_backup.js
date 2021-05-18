@@ -2,8 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const Task = require('./js/Task');
 
-
-
 const app = express();
 
 var password = process.env.Mongo_atlas_password;
@@ -94,49 +92,31 @@ var a={
     "task":[]
    };
 
-app.get('/api/todo',async function(req, res){
-    //res.json(a);
-    await Task.find()
-    .then((result)=>{
-     res.send(result)
-    })
-    .catch((err)=>{
-        console.log(err)
-    })
+app.get('/api/todo', function(req, res){
+    res.json(a);
 })
 
-app.post('/api/todo',async function(req, res){
-    var newt= req.body;
-    console.log(newt)
-    const task= new Task({
-        name: newt.task,
-        isdelete: true
-    })
-    console.log(task)
-    await task.save()
-    //res.json(a)
+app.post('/api/todo', function(req, res){
+    var newUser= req.body;
+    // console.log(newUser.task)
+    a.task.push(newUser.task)
+    // console.log(a)
+    res.json(a)
  })
 
- app.delete('/api/todo/:id', async function(req, res){
+ app.delete('/api/todo/:id', function(req, res){
     var i=req.params.id
-    await Task.findByIdAndDelete(i,function(err,orb){
-        if(err)
-        console.log("ERROR:"+err)
-        else 
-        console.log("SUCCESS")
-    })
+    if(i==-1){
+        for(var j=0;j<a.task.length;++j){
+            a.task.splice(j,1)
+            console.log(a.task[j])
+        }
+    }
+    a.task.splice(i,1)
 })
 
 app.put('/api/todo/:id', function(req, res){
     var i=req.params.id
-    Task.findById(i,function(err,obj){
-        if(err)
-        console.log("ERROR:"+err)
-        else {
-        console.log("SUCCESS"+obj.name)
-        var obj={name: "<s>"+obj.name+"</s>" }
-        Task.findByIdAndUpdate(i,obj,function(){})
-        }
-})
+    a.task[i]="<s>"+a.task[i]+"</s>" 
 })
 

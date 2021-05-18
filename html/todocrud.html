@@ -18,28 +18,21 @@
     <div id="show"></div>
 <script>
 
-//   window.onload = function () {
-//     if (localStorage.getItem("hasCodeRunBefore") === null) {
-//       $.ajax({
-//         url: '/api/todo/-1',
-//         type: 'DELETE',
-//         dataType: 'json'
-//     });
-//         localStorage.setItem("hasCodeRunBefore", true);
-//     }
-//     disp()
-// }
+  window.onload = function () {
+    disp()
+}
 
-  function disp(){
-    $.get("/api/todo", function(data, status){
+     function disp(){
+     $.get("/api/todo", function(data, status){
       var d=data
     console.log(status)
     console.log(d)
     //$('#show').replaceAll('<div id="show"></div>');
     document.getElementById("show").innerHTML=""
-    for(var i=0;i<d.task.length;++i){
-     //$('#show').append("<p>" + d.task[i] + "</p>");
-     document.getElementById("show").innerHTML+="<div id='box'><p id='data2'>"+d.task[i]+ "</p><span id='btns'><button class='btn' onclick='done("+i+")'>Done</button>"+" "+"<button class='btn' onclick='del("+i+")'>Delete</button></span> </div><br>"
+    for(var i=0;i<d.length;++i){
+      console.log(d[i]._id)
+      let j= d[i]._id
+     document.getElementById("show").innerHTML+="<div id='box'><p id='data2'>"+ d[i].name + "</p><span id='btns'><button class='btn' onclick='done(\""+j+"\")'>Done</button>"+" "+"<button class='btn' onclick='del(\""+j+"\")'>Delete</button></span> </div><br>"
     }
   });
   }
@@ -47,29 +40,19 @@
   $(document).ready(function(){
   $("#btn").click(function(){
     var d=$('#data')[0].value
-    var k={
-      "task":[d]
-    };
-    $.ajax({
-        url: '/api/todo',
-        type: 'POST',
-        //contentType: 'application/json',
-        data: {
-          "task":d
-        },
-        dataType: 'json'
-    });
-    disp()
+  $.post('/api/todo',{task: d})
+  disp()
   });
 });
 
-function del(i){
-  $.ajax({
+async function del(i){
+  console.log(i)
+ await $.ajax({
         url: '/api/todo/'+i,
         type: 'DELETE',
         dataType: 'json'
     });
-      disp()
+  await   disp()
     }
     function done(i){
       $.ajax({

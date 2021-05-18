@@ -6,10 +6,10 @@ const Taskschema = new schema({
         type: String,
         required: true
     },
-    body:{
-        type: String
+    isdelete:{
+        type: Boolean,
+        required: true
     }
-   
 }, {timestamps: true})
 const Task = mongoose.model('Task',Taskschema)
 module.exports = Task
