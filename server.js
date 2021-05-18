@@ -1,6 +1,41 @@
 const express = require('express');
+const mongoose = require('mongoose');
+const Task = require('./js/Task');
 
 const app = express();
+
+var password = process.env.Mongo_atlas_password;
+var connectionString = "mongodb+srv://tenor06:"+password+"@cluster0.mw1u9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+
+mongoose.connect(connectionString,{})
+.then((result)=> console.log("Database Connected"))
+.catch((err)=>console.log("ERROR!!"))
+mongoose.connection.on('connected',function(){
+    console.log("DB Connected")
+})
+
+app.get("/add-task", function(req, res){
+   const task= new Task({
+       name: 'two',
+       body: 'akhdbhjfb'
+   })
+   task.save()
+   .then((result)=>{
+       res.send(result)
+   })
+   .catch((err)=>{
+       console.log(err)
+   })
+})
+app.get("/all-tasks", function(req, res){
+    Task.find()
+    .then((result)=>{
+        res.send(result)
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+})
 
 app.use(express.static(__dirname));
 

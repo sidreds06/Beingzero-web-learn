@@ -11,24 +11,24 @@
 <body>
     <!-- <form action="/api/todo" method="GET"> -->
     <div>
-        <input type="text" id="data" name="data" placeholder="Task...">
+       <input type="text" id="data" name="data" placeholder="Task...">
        <button id="btn">Add</button>
         <!-- <input type="submit" value="submit"> -->
     </div>
     <div id="show"></div>
 <script>
 
-  window.onload = function () {
-    if (localStorage.getItem("hasCodeRunBefore") === null) {
-      $.ajax({
-        url: '/api/todo/-1',
-        type: 'DELETE',
-        dataType: 'json'
-    });
-        localStorage.setItem("hasCodeRunBefore", true);
-    }
-    disp()
-}
+//   window.onload = function () {
+//     if (localStorage.getItem("hasCodeRunBefore") === null) {
+//       $.ajax({
+//         url: '/api/todo/-1',
+//         type: 'DELETE',
+//         dataType: 'json'
+//     });
+//         localStorage.setItem("hasCodeRunBefore", true);
+//     }
+//     disp()
+// }
 
   function disp(){
     $.get("/api/todo", function(data, status){
