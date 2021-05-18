@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const Table = require('./js/Table');
 const Task = require('./js/Task');
 
 
