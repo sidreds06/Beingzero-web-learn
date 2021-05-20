@@ -83,6 +83,8 @@
             alert('No test selected!')
         } else {
             addRow(newTest)
+            console.log(newTest.name)
+            console.log(newTest.Articels)
             $('#test-name').val('')
             $('#test-result').val('')
             $('.form-wrapper').addClass('hidden')

@@ -78,6 +78,7 @@ const PORT = config.webPort;
 // Start the server
 app.listen(PORT, function(){
     console.log("Server Starting running on http://localhost:"+PORT);
+    console.log("!!!!!!!!!"+config.webPort+"!!!!!!!!!!!!")
 })
 app.get('/todocrud', function(req, res){
     res.sendFile('html/todocrud.html', {root: __dirname}); 
