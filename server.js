@@ -1,20 +1,12 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const Table = require('./js/Table');
 const Task = require('./js/Task');
+const dbConection = require('./js/lib/dbConnectLib')
 
 
 const app = express();
 
-var password = process.env.Mongo_atlas_password;
-var connectionString = "mongodb+srv://tenor06:Abhishyant22102004@cluster0.mw1u9.mongodb.net/CRUD?retryWrites=true&w=majority"
-
-mongoose.connect(connectionString,{})
-.then((result)=> console.log("Database Connected"))
-.catch((err)=>console.log("ERROR!!"))
-mongoose.connection.on('connected',function(){
-    console.log("DB Connected")
-})
+dbConection.connect()
 
 app.get("/add-task", function(req, res){
    const task= new Task({
