@@ -8,7 +8,6 @@ const config = require('./js/config/config')
 const app = express();
 
 dbConection.connect()
-
 app.get("/add-task", function(req, res){
    const task= new Task({
        name: 'two',
@@ -78,7 +77,6 @@ const PORT = config.webPort;
 // Start the server
 app.listen(PORT, function(){
     console.log("Server Starting running on http://localhost:"+PORT);
-    console.log("!!!!!!!!!"+config.webPort+"!!!!!!!!!!!!")
 })
 app.get('/todocrud', function(req, res){
     res.sendFile('html/todocrud.html', {root: __dirname}); 
