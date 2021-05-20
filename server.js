@@ -2,6 +2,7 @@ const express = require('express');
 const Table = require('./js/Table');
 const Task = require('./js/Task');
 const dbConection = require('./js/lib/dbConnectLib')
+const config = require('./js/config/config')
 
 
 const app = express();
@@ -75,8 +76,8 @@ app.get('/todo', function(req, res){
 const PORT = process.env.PORT || 3000;
 
 // Start the server
-app.listen(PORT, function(){
-    console.log("Server Starting running on http://localhost:"+PORT);
+app.listen(config.webPort, function(){
+    console.log("Server Starting running on http://localhost:"+config.webPort);
 })
 app.get('/todocrud', function(req, res){
     res.sendFile('html/todocrud.html', {root: __dirname}); 
