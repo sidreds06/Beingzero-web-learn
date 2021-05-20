@@ -73,11 +73,11 @@ app.get('/todo', function(req, res){
     res.sendFile('html/todo.html', {root: __dirname}); 
 })  
 // Heroku will automatically set an environment variable called PORT
-const PORT = process.env.PORT || 3000;
+const PORT = config.webPort;
 
 // Start the server
-app.listen(config.webPort, function(){
-    console.log("Server Starting running on http://localhost:"+config.webPort);
+app.listen(PORT, function(){
+    console.log("Server Starting running on http://localhost:"+PORT);
 })
 app.get('/todocrud', function(req, res){
     res.sendFile('html/todocrud.html', {root: __dirname}); 
