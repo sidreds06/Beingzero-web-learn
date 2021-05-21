@@ -71,6 +71,9 @@ app.get('/cf-api', function(req, res){
 app.get('/todo', function(req, res){
     res.sendFile('html/todo.html', {root: __dirname}); 
 })  
+app.get('/tambola', function(req, res){
+    res.sendFile('html/tambola.html', {root: __dirname}); 
+})  
 // Heroku will automatically set an environment variable called PORT
 const PORT = config.webPort;
 
